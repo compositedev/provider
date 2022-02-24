@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: provider-mainnet
+spec:
+  selector:
+    matchLabels:
+      app: provider-mainnet
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: provider-mainnet
+    spec:
+      containers:
+      - name: provider-mainnet
+        image: provider-mainnet-image
+        ports:
+            - containerPort: 8030
