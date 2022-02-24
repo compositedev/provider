@@ -26,7 +26,10 @@ spec:
                 name: provider-mainnet
                 key: PROVIDER_PRIVATE_KEY
           - name: NETWORK_URL
-            value: "https://mainnet.infura.io/v3/2a2b1746699c4674a7ac36da9c68fceb"
+            valueFrom:
+              secretKeyRef:
+                name: provider-mainnet
+                key: NETWORK_URL
           - name: AQUARIUS_URL
             value: "https://aquarius.mainnet.bigdataprotocolmarket.com:5000" 
           - name: PROVIDER_ADDRESS
